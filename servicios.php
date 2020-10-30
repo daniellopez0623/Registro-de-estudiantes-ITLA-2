@@ -1,8 +1,15 @@
+
 <?php
 
-  $carrera = array( [0=>"Seleccionar",1=>"Software",2=>"Seguridad",3=>"Multimedia",4=>"Mecatronica",5=>"Sonido"]);
-  
-  
+  $carrera = array( [1=>"Seleccionar",
+                    2=>"Software",
+                    3=>"Seguridad",
+                    4=>"Multimedia",
+                    5=>"Mecatronica",
+                    6=>"Sonido"]);
+
+
+
 function getLastElement($lista){
     $contarlista=count($lista);
     $ultimoele=$lista[$contarlista - 1];

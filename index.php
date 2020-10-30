@@ -2,6 +2,8 @@
 
 session_start();
 
+
+
 $_SESSION ['estudiantes'] = isset($_SESSION['estudiantes']) ? $_SESSION['estudiantes'] : array();
 
 $idlista = $_SESSION['estudiantes'];
@@ -39,7 +41,7 @@ $idlista = buscar($idlista,'carrera',$_GET['idcarrera']);
    <br>
    <div class="row container">
        <div class="col-12 "> 
-               <a href="#" class="btn btn-lg btn-block btn-success">Registrar Nuevo Estudiante &nbsp; 
+               <a href="add.php" class="btn btn-lg btn-block btn-success">Registrar Nuevo Estudiante &nbsp; 
                <i class="far fa-address-book"></i> </a> 
          </br>
 
@@ -65,11 +67,39 @@ $idlista = buscar($idlista,'carrera',$_GET['idcarrera']);
   </div>
   <div class="card-body container">
     
+  <div class="row">
 
+<?php if (empty($idlista)) : ?>
 
+<?php else : ?>
 
+<?php foreach ($idlista as $estudiante) : ?>
 
+<div class="col-md-3 ">
+    <div class="card border-primary" style="width: 16rem;">
+        <div class="card-body">
+            <div class="card-text">
+                <?php echo $estudiante['nombre']  ?>
+                <?php echo $estudiante['apellido'] ?>
+                <?php echo getcarrera($estudiante['carrera']); ?>
+            <input type="checkbox" id="Check01" name="activo" checked>
+            <label class="form-check-label " for="Check01">Activo</label>
+            </div>
+            <br></br>
+            <div>
+            <a href="update.php?id=<?php echo $estudiante['id']; ?>" class="card-link">
+                 <i class=" far fa-edit"></i> </a>
+            <a href="delete.php?id=<?php echo $estudiante['id']; ?>" class="card-link">
+                 <i class="far fa-trash-alt"></i></a>               
+             </div>
+        </div>
+    </div>
+</div>
 
+<?php endforeach; ?>
+<?php endif; ?>
+
+</div>
 
   </div>
   <div class="card-footer text-muted">
