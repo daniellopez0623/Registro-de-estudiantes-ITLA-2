@@ -36,7 +36,7 @@ $idlista = buscar($idlista,'carrera',$_GET['idcarrera']);
     
 
 <div class="card text-center">    
-  <div class="card-header logo1">
+  <div class="card-header ">
    <h1>Registro de Estudiante</h1> 
    <br>
    <div class="row container">
