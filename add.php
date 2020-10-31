@@ -61,9 +61,7 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['carrer
                             <label>Seleccionar</label>
                             <select class="form-control" id="carrera" name="carrera">
                                 <?php foreach ($carrera as $key => $text) : ?>
-                                <option value="<?php echo $key; ?>">
-                                <?php echo $text; ?>
-                                </option>
+                                <option value="<?php echo $key; ?>"><?php echo $text; ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <br></br>

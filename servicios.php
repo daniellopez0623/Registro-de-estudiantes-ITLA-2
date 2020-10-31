@@ -1,13 +1,12 @@
 
 <?php
 
-  $carrera = array( [1=>"Seleccionar",
+  $carrera =  [1=>"Seleccionar",
                     2=>"Software",
                     3=>"Seguridad",
                     4=>"Multimedia",
                     5=>"Mecatronica",
-                    6=>"Sonido"]);
-
+                    6=>"Sonido"];
 
 
 function getLastElement($lista){
